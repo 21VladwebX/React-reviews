@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import Table from './components/table/Table';
+
+// import Example from './components/example/Example';
 import './App.css';
+import Wine from './components/img/wine.png'
+
+let headers = localStorage.getItem('headers');
+let data = localStorage.getItem('data');
+
+if(!headers){
+  headers = ['TItle', 'Year', 'Rating', 'Comments'];
+  data =[ ['Test', ' 2015', '3', 'meh']];
+}
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="title">
+          <img src={Wine} alt="wine" title="wine"/>
+          <span> Welcome to WinePad </span>
+
+        </div>
+        <Table header={headers} data={data}/>
+        {/*<Example href="https://www.youtube.com/watch?v=5jcTp4Db_oI"*/}
+                 {/*style={{color: "red"}}*/}
+                 {/*target="_blank"*/}
+                 {/*size="medium"*/}
+
+        {/*>*/}
+          {/*Hello*/}
+        {/*</Example>*/}
       </div>
     );
   }
