@@ -20,7 +20,7 @@ class Suggest extends Component {
 
   render(){
     const randomid = Math.random().toString(16).substr(2);
-    console.log(`randomidnd is ${randomid}`);
+    // console.log(`randomidnd is ${randomid}`);
 
     return(
       <div>

@@ -57,7 +57,8 @@ class Rating extends Component {
                       : null}
           key={i}
           onClick={!this.props.readOnly && this.setRating.bind(this,i)}
-          onMouseOver={!this.props.readOnly && this.reset.bind(this,i)}
+          onMouseOver={!this.props.readOnly && this.setTemp.bind(this,i)}
+          onMouseLeave={!this.props.readOnly && this.reset.bind(this)}
         >
           <img src={Star} alt="stars"/>
         </span>
