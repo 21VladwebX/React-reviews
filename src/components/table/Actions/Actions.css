@@ -1,0 +1,9 @@
+.Actions{
+  max-width: 3em;
+}
+.Actions span{
+  /*display: inline-block;*/
+  font-size: 20px;
+  padding: 0 15px;
+
+}

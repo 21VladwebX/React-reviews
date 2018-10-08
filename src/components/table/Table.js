@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '../button/Button';
 import Form from '../Form/Form';
 
-
+import Actions from './Actions/Actions';
 import './tables.css'
 
 class Table extends Component {
@@ -12,7 +12,7 @@ class Table extends Component {
   static propTypes = {
     header: PropTypes.array,
     data: PropTypes.array
-  }
+  };
 
   constructor(props){
     super(props);
@@ -34,7 +34,7 @@ class Table extends Component {
       descending: false,
       edit: null,
       search: false
-    })
+    });
 
     this.preSearchData = null;
     this.filteredData = null;
@@ -294,12 +294,35 @@ class Table extends Component {
                               }
                               return <th rowkey={rowKey} key={key} >{title}</th>
                             }, this)}
+                            <Actions onAction={ type => alert(type)} />
                           </tr>
                 }, this)}
               </tbody>
             </table>
           </div>
-          <Form/>
+          <Form
+            // readOnly={true}
+            fields = {[
+              {
+                label: 'Rating',
+                type: 'rating',
+                id: "ratname",
+                max: 7,
+              },
+              {
+                label: 'Greeting',
+                id: 'freetext',
+              }
+            ]}
+
+            initialData={
+              {
+                ratname: 4,
+                freetext: 'Hello'
+              }
+            }
+
+          />
         </div>
       );
     }
