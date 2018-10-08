@@ -28,13 +28,12 @@ class Rating extends Component {
   }
 
   setTemp(rating){
-    console.log(rating);
     this.setState({
       tmpRating: rating
     });
   }
   setRating(rating){
-    this.setRating({
+    this.setState({
       tmpRating: rating,
       rating: rating,
     })
@@ -58,7 +57,7 @@ class Rating extends Component {
                       : null}
           key={i}
           onClick={!this.props.readOnly && this.setRating.bind(this,i)}
-          onMouseOver={!this.props.readOnly && this.setTemp.bind(this,i)}
+          onMouseOver={!this.props.readOnly && this.reset.bind(this,i)}
         >
           <img src={Star} alt="stars"/>
         </span>
