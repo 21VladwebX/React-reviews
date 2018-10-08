@@ -64,7 +64,6 @@ class Rating extends Component {
         </span>
       )
     }
-    // console.log(stars);
     return(
       <div className={classNames({
         Rating : true,
