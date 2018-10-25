@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
 import Rating from  './comp/Rating/Rating';
 // import Suggest from './comp/Suggest/Suggest';
+
 import FormInput from './comp/FormInput/FormInput';
 
 // import './Button.css';
